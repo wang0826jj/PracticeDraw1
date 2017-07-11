@@ -2,6 +2,8 @@ package com.hencoder.hencoderpracticedraw1.practice;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -25,5 +27,11 @@ public class Practice8DrawArcView extends View {
         super.onDraw(canvas);
 
 //        练习内容：使用 canvas.drawArc() 方法画弧形和扇形
+        Paint paint = new Paint();
+        paint.setStyle(Paint.Style.FILL);
+        canvas.drawArc(new RectF(200, 100, 600, 400), -100f, 90f, true, paint);
+        canvas.drawArc(new RectF(200, 150, 600, 450), 0f, 180f, true, paint);
+        paint.setStyle(Paint.Style.STROKE);
+        canvas.drawArc(new RectF(200, 100, 600, 400), -180f, 70f, false, paint);
     }
 }
